@@ -1,2 +1,2 @@
 # MySpringApplication1
-One of the first test spring projects
+One of the first spring test projects
