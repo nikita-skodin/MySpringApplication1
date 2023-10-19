@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new User</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/users}" th:object="${user}">
+
+    <label for="username">Enter your username: </label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}">error</div>
+    <br>
+
+    <label for="password">Enter your password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
+    <br>
+
+    <label for="age">Enter your age: </label>
+    <input type="number" th:field="*{age}" id="age"/>
+    <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}">error</div>
+    <br>
+
+    <label for="email">Enter your email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
+    <br>
+
+    <label for="address">Enter your address: </label>
+    <input type="text" th:field="*{address}" id="address"/>
+    <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}">error</div>
+    <br>
+
+    <label for="date">Birthday date </label>
+    <input type="date" th:field="*{dateOfBirth}" id="date"/>
+    <div th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}">error</div>
+    <br>
+
+    <input type="submit" value="Create"/>
+</form>
+
+<br>
+
+<form th:method="GET" th:action="@{/users}" >
+    <input type="submit" value="Return"/>
+</form>
+
+</body>
+</html>
